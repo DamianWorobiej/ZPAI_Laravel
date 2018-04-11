@@ -14,4 +14,5 @@ $products = DB::table('produkty')->get();
 
 </div>
 @endforeach
+<script src="js/accordion.js"></script>
 @endsection

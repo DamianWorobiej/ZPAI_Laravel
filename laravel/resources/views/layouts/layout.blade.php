@@ -42,17 +42,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-  <!--Parallax scrolling-->
-  <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700&v2' rel='stylesheet' type='text/css'>
-
-  <link href='http://fonts.googleapis.com/css?family=Jacques+Francois' rel='stylesheet' type='text/css'>
-
-  <link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
-
-  <link href='http://fonts.googleapis.com/css?family=Oxygen+Mono' rel='stylesheet' type='text/css'>
   
-
-  <!--Parallax scrolling-->
   
   <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}">
   
@@ -61,7 +51,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 	</head>
 	
 	<nav class="navbar navbar-inverse">
@@ -123,12 +113,9 @@
 		 @include('layouts.footer')
 		 </footer>
 		 
-		   <script src="{{ asset('skrollr/dist/skrollr.min.js') }}"></script>
-		   <script>
-		   skrollr.init();
-		   </script>
-		   <script src="https://cdn.tutorialzine.com/misc/enhance/v3.js" async></script>
-		 <script src="js/accordion.js"></script>
+		   
+		   
+		 
 		 <script type="text/javascipt" src="{{ asset('js/lightbox-plus-jquery.min.js') }}"></script>
      </body>
  </html>

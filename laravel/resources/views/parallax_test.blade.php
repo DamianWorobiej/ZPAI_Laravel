@@ -7,8 +7,10 @@
 <?php
 $products = DB::table('produkty')->get();
 ?>
+
+<div class="parallax" style="background-image:url(images/bckg_tel.jpg)"></div>
 @foreach($products as $product)
-<div class="parallax" style="background-image:url({{ $product->img }})"></div>
+
 
 <div class="items" >
 <h3>{{$product->nazwa}}</h3>
@@ -17,4 +19,3 @@ $products = DB::table('produkty')->get();
 </div>
 @endforeach
 @endsection
-
