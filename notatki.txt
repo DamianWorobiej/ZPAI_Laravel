@@ -1,0 +1,10 @@
+lab 1 13.03
+php artisan 
+
+	env - środowisko
+	make:controller - tworzy nową klasę kontrolera
+	route:list - lisuje wszystkie zarejestrowane ścieżki (routes)
+	migrate - odpala przeniesienie bazy danych
+	make:auth - tworzy podstawowy szkielet widoku i ścieżki logowania i rejestracji
+	down - przełącza aplikację w tryb serwisowy(?)
+	up - odwrotnie

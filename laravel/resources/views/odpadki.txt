@@ -1,0 +1,102 @@
+	
+	<div class="body-text">
+
+        <h2>Body Text</h2>
+
+        <p data-300-center-top="transform: scale(0.8); opacity: 0" data-300-center-center="transform: scale(1); opacity: 1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida in odio vel tincidunt. Fusce quis lectus accumsan, accumsan nibh sed, aliquet purus. In vitae velit eu est cursus malesuada sed ut nibh. Curabitur a leo enim.
+        </p>
+
+
+        <p data-200-center-top="transform: scale(0.8); opacity: 0" data-200-center-center="transform: scale(1); opacity: 1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida in odio vel tincidunt. Fusce quis lectus accumsan, accumsan nibh sed, aliquet purus. In vitae velit eu est cursus malesuada sed ut nibh. Curabitur a leo enim.
+        </p>
+
+        <p data-100-center-top="transform: scale(0.8); opacity: 0" data-100-center-center="transform: scale(1); opacity: 1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida in odio vel tincidunt. Fusce quis lectus accumsan, accumsan nibh sed, aliquet purus. In vitae velit eu est cursus malesuada sed ut nibh. Curabitur a leo enim.
+        </p>
+
+</div>
+
+
+
+<style>
+	
+	.b_image{
+		background-image:url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=background-blur-clean-531880.jpg&fm=jpg");
+		width: 100%;
+		heigth: 100vh;
+		background-attachment: fixed;
+		background-size:cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	
+	.1_image{
+		background-image:url(imgages/wink.png);
+		width: 100%;
+		heigth: 100vh;
+		background-attachment: fixed;
+		background-size:cover;
+	}
+	
+	.2_image{
+		background-image:url(images/babciny.jpg);
+		width: 100%;
+		heigth: 100vh;
+		background-attachment: fixed;
+		background-size:cover;
+	}
+	
+	
+	</style>
+</head>
+<body>
+
+<p>bla</p>
+
+    <div class="b_image">
+
+    </div>
+	<div class="2_image">
+	</div>
+	
+	<div class="3_image">
+	</div>
+
+
+<p>bla2</p>
+
+</body>
+</html>
+
+<?php
+foreach ($products as $product)
+{
+	$img = asset($product->img);
+	$img_thumb = asset($product->img_thumb);
+	$img_opis = $product->img_opis;
+	echo '<div class="page-header">'.PHP_EOL;
+	echo '<h3>'.$product->nazwa.'</h3>';
+	echo '</div>'.PHP_EOL;
+	
+	echo '<p>' . $product->opis . '</p>' . PHP_EOL;
+	?><a class="example-image-link" href="{{ url(<?php echo $img; ?>) }} " data-lightbox="set" data-title=" <?php echo $img_opis; ?>"><img class="example-image" src="<?php echo $img_thumb; ?>" alt="image-1" /></a>;
+<?php
+}
+
+?>
+
+<div class="container">
+<?php
+$products = DB::table('produkty')->where('kategoria_id',$id)->get();
+?>
+@foreach ($products as $product)
+<div class="page-header">
+<h3>{{$product->nazwa}}</h3>
+</div>
+<p>{{$product->opis}}</p>
+<a class="example-image-link" href="{{ url($product->img) }} " data-lightbox="set" data-title="{{ $product->img_opis }}"><img class="example-image" src="{{ url($product->img_thumb) }}" alt="image-1" /></a>
+@endforeach
+
+  </div>
