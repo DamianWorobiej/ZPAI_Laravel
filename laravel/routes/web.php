@@ -31,7 +31,9 @@ Route::get('/wyglad', function() {
 	return view('layout');
 });
 
-Route::get('/kategoria/{id}', 'CategoriesController@show')->where('id', '[0-9]+')->name('items');
+Route::get('/kategoria/{id}', function($id) {
+	return view('categories.categories', ['id' => $id]);
+})->where('id', '[0-9]+')->name('items');
 
 Route::get('/car', function(){
 	return view('carousel_test');
@@ -48,3 +50,7 @@ Route::get('/acc', function() {
 Route::get('/crud', function() {
 	return view('CRUD');
 })->name('crud');
+
+Route::get('/lb', function() {
+	return view('lb');
+});

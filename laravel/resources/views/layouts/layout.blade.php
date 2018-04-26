@@ -9,7 +9,7 @@
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -77,8 +77,7 @@
 				echo "<ul>" . PHP_EOL;
 			foreach ($categories as $category)
 			{
-				echo '<li><a href="'. route('items',$category->id).'">'.$category->nazwa.'</a></li>';//'<li><a href="' . 'kategorie.php' . '?kat_id=' . $kategoria['id'] . '">' . $kategoria['nazwa'] . '</a></li>' . PHP_EOL;
-
+				echo '<li><a href="'. route('items',$category->id).'">'.$category->nazwa.'</a></li>';
 			}
 				echo "</ul>" . PHP_EOL;
 		  ?>
