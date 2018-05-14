@@ -33,8 +33,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: 10%;
+    
+	height: 100%;
 }
 
 /* Caption of Modal Image */
@@ -46,7 +47,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-    height: 150px;
+    height: 100px;
 }
 
 /* Add Animation */
@@ -98,21 +99,23 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 <?php
 $products = DB::table('produkty')->get();
+$imgID = 1;
 ?>
 
 @foreach($products as $product)
 <div class="item">
 <h3>{{$product->nazwa}}</h3>
 <p>{{$product->opis}}</p>
-<img id="myImg" src="{{ $product->img_thumb }}" alt="{{ $product->opis }}">
+<img id="myImg<?php echo $imgID ?>" onclick="imageShow(<?php echo $imgID ?>)"  alt="{{ $product->opis }}" srcset="{{ $product->img_thumb }}" src="{{ $product->img }}">
 
 <!-- The Modal -->
 <div id="myModal" onclick="closeModal()" class="modal">
   <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
+  <img class="modal-content" id="img00" src="{{ $product->img }}">
   <div id="caption">caption</div>
 </div>
 </div>
+<?php $imgID = $imgID + 1; ?>
 @endforeach
 
 
@@ -121,21 +124,22 @@ $products = DB::table('produkty')->get();
 var modal = document.getElementById('myModal');
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById('myImg');
-var modalImg = document.getElementById("img01");
+var modalImg = document.getElementById("img00");
 var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-}
-
-// function imageShow(){
-	// modal.style.display = "block";
-	// state = 1;
+// img.onclick = function(){
+    // modal.style.display = "block";
     // modalImg.src = this.src;
     // captionText.innerHTML = this.alt;
 // }
-//
+
+function imageShow(image){
+	modal.style.display = "block";
+	var name = 'myImg' + image;
+	var dispImg = document.getElementById(name);
+    modalImg.src = dispImg.src;
+    captionText.innerHTML = dispImg.alt;
+}
+
 
 function closeModal(){
 	modal.style.display = "none";

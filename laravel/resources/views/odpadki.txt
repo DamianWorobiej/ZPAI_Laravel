@@ -109,3 +109,14 @@ $products = DB::table('produkty')->where('kategoria_id',$id)->get();
 <a class="example-image-link" href="{{ url($product->img) }} " data-lightbox="set" data-title="{{ $product->img_opis }}"><img class="example-image" src="{{ url($product->img_thumb) }}" alt="image-1" /></a>
 </div>
 <a class="example-image-link" href="{{$product->img}}" data-lightbox="set"><img class="example-image" src="{{$product->img_thumb}}" alt="image-1" height="200" border="2"/></a>-->
+
+
+<?php
+			$categories = DB::table('kategorie')->orderBy('nazwa')->get();
+				echo "<ul>" . PHP_EOL;
+			foreach ($categories as $category)
+			{
+				echo '<li><a href="'. route('items',$category->id).'">'.$category->nazwa.'</a></li>';
+			}
+				echo "</ul>" . PHP_EOL;
+		  ?>

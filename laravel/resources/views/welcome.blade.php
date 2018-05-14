@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
+
         <!--<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,9 +62,10 @@
             }
         </style>-->
 		@extends('layouts.layout')
+		<head>
 		<title>Strona główna</title>
     </head>
-    <body>
+   
         <!--<div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -98,58 +97,6 @@
 		
 		<!--@section('content')-->
 		@section('content')
-		<div class="container">
-		<a data-toggle="lightbox" href="#demoLightbox">
-
-    <img src="https://dummyimage.com/600x400/000/fff" class="small-img">
-
-  </a>
-  <div id="demoLightbox" class="lightbox fade"  tabindex="-1" role="dialog" aria-hidden="true">
-
-    <div class='lightbox-dialog'>
-
-        <div class='lightbox-content'>
-
-            <img src="https://dummyimage.com/600x400/000/fff">
-
-            <div class='lightbox-caption'>
-
-                Write here your caption here
-
-            </div>
-
-        </div>
-
-    </div>
-
-  </div>
-  
-    <a data-toggle="lightbox" href="#demoLightbox2">
-
-    <img src="https://dummyimage.com/600x500/000/fff" class="small-img">
-
-  </a>
-
-  <div id="demoLightbox2" class="lightbox fade"  tabindex="-1" role="dialog" aria-hidden="true">
-
-    <div class='lightbox-dialog'>
-
-        <div class='lightbox-content'>
-
-            <img src="https://dummyimage.com/600x500/000/fff">
-
-            <div class='lightbox-caption'>
-
-                Write here your caption here
-
-            </div>
-
-        </div>
-
-    </div>
-
-  </div>
-		</div>
+		<h1>Witojcie!</h1>
 		@endsection
-    </body>
-</html>
+  

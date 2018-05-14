@@ -54,3 +54,7 @@ Route::get('/crud', function() {
 Route::get('/lb', function() {
 	return view('lb');
 });
+
+Route::get('/lb2', function() {
+	return view('lb2');
+});

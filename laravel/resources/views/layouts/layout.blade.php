@@ -37,21 +37,21 @@
     }
 
   </style>-->
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
   
   
   
-  <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}">
   
   
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 	</head>
 	
 	<nav class="navbar navbar-inverse">
@@ -72,15 +72,12 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kategorie <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
 		  
-		  <?php
-			$categories = DB::table('kategorie')->orderBy('nazwa')->get();
-				echo "<ul>" . PHP_EOL;
-			foreach ($categories as $category)
-			{
-				echo '<li><a href="'. route('items',$category->id).'">'.$category->nazwa.'</a></li>';
-			}
-				echo "</ul>" . PHP_EOL;
-		  ?>
+		  <?php $categories = DB::table('kategorie')->orderBy('nazwa')->get(); ?>
+		  @foreach($categories as $category)
+			<ul>			
+			<li><a href=" {{ route('items',$category->id) }}">{{ $category->nazwa }}</a></li>
+			</ul>
+		  @endforeach
 		  
 		  </ul>
         </li>
@@ -112,9 +109,15 @@
 		 @include('layouts.footer')
 		 </footer>
 		 
-		   
-		   
-		 
-		 <script type="text/javascipt" src="{{ asset('js/lightbox-plus-jquery.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script type="text/javascript">
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+</script>
      </body>
  </html>
