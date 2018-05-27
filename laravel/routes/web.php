@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$title = "Główna";
+    return view('welcome', compact('title'));
 })->name('logged_home');
 
 Route::get('/kontakt', function() {
-	return view('contact');
+	$title = "Kontakt";
+	return view('contact', compact('title'));
 })->name('contact');
 
 Route::get('/page/{parametr}', function($parametr) {
@@ -32,29 +34,39 @@ Route::get('/wyglad', function() {
 });
 
 Route::get('/kategoria/{id}', function($id) {
-	return view('categories.categories', ['id' => $id]);
+	$test = DB::table('kategorie')->where('id',$id)->get();
+	foreach($test as $testy){
+	$title = $testy->nazwa;
+}
+	return view('categories.categories', ['id' => $id], compact('title'));
 })->where('id', '[0-9]+')->name('items');
 
 Route::get('/car', function(){
-	return view('carousel_test');
+	$title = "Test karuzeli";
+	return view('carousel_test', compact('title'));
 });
 
 Route::get('/par', function() {
-	return view('parallax_test');
+	$title = "Test Parallax Scrolling";
+	return view('parallax_test', compact('title'));
 });
 
 Route::get('/acc', function() {
-	return view('accordion_test');
+	$title = "Test Akordeonu";
+	return view('accordion_test', compact('title'));
 });
 
 Route::get('/crud', function() {
-	return view('CRUD');
+	$title = "CRUD";
+	return view('CRUD', compact('title'));
 })->name('crud');
 
 Route::get('/lb', function() {
-	return view('lb');
+	$title = "Lightbox test 1";
+	return view('lb', compact('title'));
 });
 
 Route::get('/lb2', function() {
-	return view('lb2');
+	$title = "Lightbox test 2";
+	return view('lb2', compact('title'));
 });

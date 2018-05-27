@@ -37,21 +37,21 @@
     }
 
   </style>-->
-		        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 
 		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
 
   
-  
+<link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+
   
   
   
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+        <title>{{ $title }}</title>
 	</head>
 	
 	<nav class="navbar navbar-inverse">
@@ -105,9 +105,9 @@
          @yield('content')
 		 <!--treść z layoutu-->
 		 
-		 <footer class="row">
+		 <!--<footer>-->
 		 @include('layouts.footer')
-		 </footer>
+		 <!--</footer>-->
 		 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>

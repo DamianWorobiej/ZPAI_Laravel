@@ -62,9 +62,7 @@
             }
         </style>-->
 		@extends('layouts.layout')
-		<head>
-		<title>Strona główna</title>
-    </head>
+
    
         <!--<div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -97,6 +95,6 @@
 		
 		<!--@section('content')-->
 		@section('content')
-		<h1>Witojcie!</h1>
+		<h1>Witojcie, i to działające!</h1>
 		@endsection
   

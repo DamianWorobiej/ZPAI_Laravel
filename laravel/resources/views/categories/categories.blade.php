@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 <head>
-	<title>Kategorie</title>
+	
 </head>
 
 @section('content')
