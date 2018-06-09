@@ -5,8 +5,8 @@
 
 @section('content')
 <?php
-$products = DB::table('produkty')->where('kategoria_id',$id)->get();
-$categories = DB::table('kategorie')->where('id',$id)->get();
+$products = DB::table('products')->where('kategoria_id',$id)->get();
+$categories = DB::table('categories')->where('id',$id)->get();
 ?>
 
 @foreach($categories as $category)

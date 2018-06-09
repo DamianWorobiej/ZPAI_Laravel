@@ -56,10 +56,8 @@ Route::get('/acc', function() {
 	return view('accordion_test', compact('title'));
 });
 
-Route::get('/crud', function() {
-	$title = "CRUD";
-	return view('CRUD', compact('title'));
-})->name('crud');
+
+Route::get('/crud', 'CRUDController@show')->name('crud');
 
 Route::get('/lb', function() {
 	$title = "Lightbox test 1";
@@ -70,3 +68,17 @@ Route::get('/lb2', function() {
 	$title = "Lightbox test 2";
 	return view('lb2', compact('title'));
 });
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('login');
+//Route::get('/home', function() {
+//	
+//	return view('home');
+//})->name('login');
+
+Route::get('/register', 'HomeController@register')->name('register');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
