@@ -33,13 +33,7 @@ Route::get('/wyglad', function() {
 	return view('layout');
 });
 
-Route::get('/kategoria/{id}', function($id) {
-	$test = DB::table('kategorie')->where('id',$id)->get();
-	foreach($test as $testy){
-	$title = $testy->nazwa;
-}
-	return view('categories.categories', ['id' => $id], compact('title'));
-})->where('id', '[0-9]+')->name('items');
+Route::get('/kategoria/{id}', 'CategoriesController@index')->where('id', '[0-9]+')->name('items');
 
 Route::get('/car', function(){
 	$title = "Test karuzeli";
@@ -57,7 +51,7 @@ Route::get('/acc', function() {
 });
 
 
-Route::get('/crud', 'CRUDController@show')->name('crud');
+//Route::get('/crud', 'CRUDController@index')->name('crud');
 
 Route::get('/lb', function() {
 	$title = "Lightbox test 1";
@@ -82,3 +76,27 @@ Route::get('/register', 'HomeController@register')->name('register');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('/crud/test', 'CRUDController@test');
+//
+//Route::get('/crud/create', 'CRUDController@create');
+//
+//Route::get('/crud/{id}/edit', 'CRUDController@edit');
+//
+//Route::get('/crud/{id}/destroy', 'CRUDController@destroy');
+
+
+Route::resource('crud','CRUDController');
+
+Route::get('/uga', function(){
+    return "uga";
+
+})->name('crud.destroy');
+
+Route::get('/nav', function(){
+    return view('nav');
+})->name('navTest');
+
+Route::get('/nav2', function(){
+    return view('nav2');
+})->name('navTest2');

@@ -95,6 +95,10 @@
 		
 		<!--@section('content')-->
 		@section('content')
-		<h1>Witojcie, i to działające!</h1>
+		<h1>STRONA GŁÓWNA</h1>
+                <br>
+                <h3>Po kliknięciu na pasku nawigacyjnym w kategorie, zostaną wyświetlone kategorie (wow).<h3>
+                        <h3>Jeżeli jesteś zalogowany, <a href="{{route('crud.index')}}">tutaj</a> możesz zarządzać treścią.</h3>
+                        <h3>Jeżeli nie jesteś zalogowany, zaloguj się <a href="{{route('login')}}">tutaj</a>.</h3>        
 		@endsection
   

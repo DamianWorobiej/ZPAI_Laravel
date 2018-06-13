@@ -1,12 +1,3 @@
-<?php
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-use Illuminate\Support\Facades\Auth;
-
-?>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -20,14 +11,24 @@ use Illuminate\Support\Facades\Auth;
 <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 
   
-  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script type="text/javascript">
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+</script>
   
 		<!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <title>{{ $title or 'ZPAI' }}</title>
 	</head>
-	
+        
+        
         <!--"navbar navbar-inverse"-->
 	<nav class="navbar navbar-expand-md navbar-inverse navbar-laravel">
             <div class="container">
@@ -85,28 +86,5 @@ use Illuminate\Support\Facades\Auth;
     </div>
             </div> <!--kwestionowalne-->
 	</nav>
-	
-     <body>
-         <!--<h1>to z pliku wyglad1</h1>-->
-          
-                                   
-                             
-         @yield('content')
-		 <!--treść z layoutu-->
-		 
-		 <!--<footer>-->
-		 @include('layouts.footer')
-		 <!--</footer>-->
-		 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
-<script type="text/javascript">
-$(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
-</script>
-     </body>
- </html>
+        
+</html>

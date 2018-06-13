@@ -2,10 +2,10 @@
                 /* background-color: #6B4226; */
                 /* color: #636b6f; */
 /*				color: white;*/
-                font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                /*border: 20;*/
             }
 
             .full-height {
@@ -72,7 +72,8 @@
     border: none;
     outline: none;
     transition: 0.4s;
-	margin: 0 50 20;
+    margin: 0 50 20;
+    
 	
 }
 
@@ -121,4 +122,29 @@
     background-size: cover;
 }
 
+.row-4{
+    margin: 0 30 50 30;
+}
 
+.btn-crud{
+    margin: 0 0 10 40;
+    width: 80%;
+    padding: 18px;
+}
+
+.p-create{
+    magrin: 20;
+}
+
+.form{
+    width: 80%;
+}
+
+/*.input.btn.btn-danger.btn-block.btn-crud{
+    width: 80%;
+}*/
+
+.cat-title{
+    text-align: center;
+    font-family: Times, serif;
+}

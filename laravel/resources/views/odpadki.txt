@@ -250,3 +250,10 @@ img.hover-shadow {
 .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
+
+
+{!! Form::model($product, ['route'=>['crud.update', $product], 'method'=>'PUT']) !!}
+<!--        <label for="nazwa">Nazwa</label>
+        <input type="text" id="nazwa" name="nazwa" class="form-control" placeholder="Podaj nazwę">-->
+
+{!! Form::close !!}

@@ -15,4 +15,13 @@ class Product extends Model
 	'img_thumb',
 	'img_opis'
 	];
+        
+        public function getkategoria_idAttribute()
+        {
+            return $this->categories->pluck('id');
+        }
+        
+        public function __toString(){
+            return "[{\"id\":".$this->id.",\"kategoria_id\":".$this->kategoria_id;
+        }
 }

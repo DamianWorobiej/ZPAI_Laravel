@@ -10,6 +10,7 @@ $categories = DB::table('categories')->where('id',$id)->get();
 ?>
 
 @foreach($categories as $category)
+<div class="cat-title"><h1>{{$category->nazwa}}</h1></div>
 <div class="parallax" style="background-image:url({{ asset($category->parallax_img) }})"></div>
 @endforeach
 @foreach($products as $product)
